@@ -1,0 +1,67 @@
+name: DumprX
+
+on:
+  workflow_dispatch:
+    inputs:
+      link:
+        description: 'Firmware Link'
+        required: true
+
+env:
+  LINK: ${{ github.event.inputs.link }}
+  TZ: Asia/Kolkata
+
+jobs:
+  Firmware-Dump:
+      runs-on: ubuntu-20.04
+
+      steps:
+
+      - name: Cleanup Space
+        uses: rokibhasansagar/slimhub_actions@main 
+
+      - name: Cloning DumprX
+        run: |
+             git clone https://github.com/ajaysinghsati/devicetree.git device/qti/holi
+             git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
+             git clone https://github.com/LineageOS/android_prebuilts_extract-tools prebuilts/extract-tools
+             git clone https://gitlab.com/android-dump/qti/holi.git
+             cd device 
+             ls 
+             cd qti 
+             ls
+             cd holi
+             ls 
+    
+             chmod u+x setup-makefiles.sh
+             ./setup-makefiles.sh
+             chmod u+x extract-files.sh
+             ./extract-files.sh ~/holi
+     
+      
+
+      - name: Installing Requirements
+        run: |
+             ls 
+             cd vendor 
+             ls
+       
+             ls 
+     
+             cd holi
+             ls 
+             cd qti 
+             ls
+             cd proprietary
+      
+             ls
+             cd boot
+             ls 
+             cd ramdisk 
+             ls 
+             cd vendor 
+             ls 
+             cd lib64 
+             ls
+
+      
