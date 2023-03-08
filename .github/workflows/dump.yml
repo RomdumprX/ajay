@@ -8,8 +8,8 @@ jobs:
 
       steps:
 
-      - name: Cleanup Space
-        uses: rokibhasansagar/slimhub_actions@main 
+
+
 
       - name: Cloning DumprX
         run: |
