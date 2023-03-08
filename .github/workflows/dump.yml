@@ -1,18 +1,40 @@
-name: DumprX
+name: Ubuntu Install and Command Run
 
-
+on: [push]
 
 jobs:
-  Firmware-Dump:
-      runs-on: ubuntu-20.04
 
-      steps:
+  ubuntu_install_and_run:
 
+    runs-on: ubuntu-latest
 
+    steps:
 
+    - name: Checkout code
 
-      - name: Cloning DumprX
-        run: |
+      uses: actions/checkout@v2
+
+      
+
+    - name: Install Ubuntu
+
+      uses: appleboy/setup-ubuntu@v2
+
+      with:
+
+        distribution: 'bionic'
+
+        packages: 'git'
+
+        
+
+    - name: Run Command
+
+      run: |
+
+        echo "Hello, Ubuntu!"
+
+        git --version
              git clone https://github.com/ajaysinghsati/devicetree.git device/qti/holi
              git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
              git clone https://github.com/LineageOS/android_prebuilts_extract-tools prebuilts/extract-tools
