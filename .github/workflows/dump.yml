@@ -1,15 +1,6 @@
 name: DumprX
 
-on:
-  workflow_dispatch:
-    inputs:
-      link:
-        description: 'Firmware Link'
-        required: true
 
-env:
-  LINK: ${{ github.event.inputs.link }}
-  TZ: Asia/Kolkata
 
 jobs:
   Firmware-Dump:
