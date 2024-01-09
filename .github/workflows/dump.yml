@@ -27,11 +27,11 @@ jobs:
              git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
              git clone https://github.com/LineageOS/android_prebuilts_extract-tools prebuilts/extract-tools
              git clone https://www.opencode.net/romdumprx/oneplus/OP535DL1.git
-             cd device 
+             cd vendor
              ls 
-             cd qti 
+             cd oplus
              ls
-             cd holi
+             cd camera
              ls 
     
              chmod u+x setup-makefiles.sh
