@@ -23,10 +23,10 @@ jobs:
       - name: SettingUp SSH Keys
         run: |
         
-             git clone https://github.com/ajaysinghsati/devicetree.git device/qti/holi
+             git clone https://gitlab.com/PixelOS-Devices/proprietary_vendor_oplus_camera.git -b 14.0 vendor/oplus/camera
              git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
              git clone https://github.com/LineageOS/android_prebuilts_extract-tools prebuilts/extract-tools
-             git clone https://gitlab.com/android-dump/qti/holi.git
+             git clone https://www.opencode.net/romdumprx/oneplus/OP535DL1.git
              cd device 
              ls 
              cd qti 
@@ -37,7 +37,7 @@ jobs:
              chmod u+x setup-makefiles.sh
              ./setup-makefiles.sh
              chmod u+x extract-files.sh
-             ./extract-files.sh ~/holi
+             ./extract-files.sh ~/OP535DL1
      
       
 
